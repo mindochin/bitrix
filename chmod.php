@@ -1,7 +1,8 @@
 <?php
 define("BX_FILE_PERMISSIONS", 0644);
 define("BX_DIR_PERMISSIONS", 0755);
-
+define("BX_USER", 'admin');
+define("BX_GROUP", 'admin');
 
 function chmod_R($path) {
 
@@ -10,9 +11,13 @@ function chmod_R($path) {
      if ( ($file !== ".") && ($file !== "..") ) {
        if ( is_file($path."/".$file) ) {
          chmod($path . "/" . $file, BX_FILE_PERMISSIONS);
+	//			 chown($path, BX_USER);
+	//			 chgrp($path, BX_GROUP);
        }
        else {
          chmod($path . "/" . $file, BX_DIR_PERMISSIONS);
+	//			 chown($path, BX_USER);
+	//			 chgrp($path, BX_GROUP);
          chmod_R($path . "/" . $file);
        }
      }
