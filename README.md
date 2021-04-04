@@ -1,4 +1,4 @@
-### Древовидный списое разделов
+### Древовидный список разделов
 
 https://max22.ru/bx-solutions/section-hierarchy/
 
