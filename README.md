@@ -20,3 +20,10 @@ while($arSection = $rsSections->GetNext()) {
 }
 unset($sectionLinc);
 ```
+
+### блокировка вирусных запросов в htaccess
+последнее время прямо волна заражений, обычно ищут дыру с доступом
+```
+RewriteCond %{REQUEST_URI} (^.*eval.*|.*base64_.*|.*assets.*|.*wp-login.*|.*wp-admin.*$)
+RewriteRule .* - [F,L]
+```
